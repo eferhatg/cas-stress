@@ -1,4 +1,4 @@
-
+#!/bin/bash
 kubectl delete deployments  -n cas --all
 kubectl delete pods -n cas --all
 kubectl delete services -n cas --all

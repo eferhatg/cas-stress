@@ -8,7 +8,7 @@ import (
 	"os"
 	"testing"
 
-	"github.com/eferhatg/project-cas/cashttpclient"
+	"github.com/eferhatg/cas-stress/cashttpclient"
 	"github.com/julienschmidt/httprouter"
 )
 

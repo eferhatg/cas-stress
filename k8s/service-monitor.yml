@@ -1,0 +1,59 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: cas-cache
+  labels:
+    app: server-layer
+    release: caspromet
+spec:
+  selector:
+    matchLabels:
+      app: server-layer
+
+  endpoints:
+    - port: cache-metrics
+      interval: 15s
+---
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: cas-server
+  labels:
+    app: server-layer
+    release: caspromet
+spec:
+  selector:
+    matchLabels:
+      app: server-layer
+  endpoints:
+    - port: server-metrics
+      interval: 15s
+---
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: cas-client
+  labels:
+    app: server-layer
+    release: caspromet
+spec:
+  selector:
+    matchLabels:
+      app: server-layer
+  endpoints:
+    - port: client-metrics
+      interval: 15s
+---
+apiVersion: monitoring.coreos.com/v1
+kind: Prometheus
+metadata:
+  name: prometheus
+spec:
+  serviceAccountName: prometheus
+  serviceMonitorSelector:
+    matchLabels:
+      app: server-layer
+  resources:
+    requests:
+      memory: 400Mi
+  enableAdminAPI: false

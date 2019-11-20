@@ -1,0 +1,51 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cas-client-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      component: cas_client
+  template:
+    metadata:
+      labels:
+        component: cas_client
+    spec:
+      containers:
+        - name: client
+          image: eferhatg/cas-client
+          ports:
+            - name: client-metrics
+              containerPort: 20001
+          env:
+            - name: CAS_SERVER_PORT
+              value: "5000"
+            - name: CAS_SERVER_ADDR
+              value: "cas-server-service:5000"
+            - name: CACHE_SERVER_ADDR
+              value: "cas-cache-service:18001"
+            - name: HIT_MISS_RATIO
+              value: "0.9"
+            - name: ATTACK_FREQ
+              value: "3"
+            - name: ATTACK_DURATION
+              value: "10"
+            - name: CONTENT_SIZE
+              value: "25000"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: cas-client-service
+  labels:
+    app: cas-client
+spec:
+  type: ClusterIP
+  selector:
+    app: cas-client
+  ports:
+    - name: client-metrics
+      port: 20001
+      protocol: TCP
+      targetPort: 20001

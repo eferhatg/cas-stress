@@ -1,4 +1,6 @@
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
+github.com/eferhatg/cas-stress v0.0.0-20191120154842-95772e4a6c38 h1:n42IMnG3eYyWNRQc6zYz1W7CIwRykrTdZ8myJJf8/Rs=
+github.com/eferhatg/cas-stress v0.0.0-20191120154842-95772e4a6c38/go.mod h1:eARCmCtD6lk5tksVQzVZuFlsjatlLOhZyLEeUo4bBm0=
 github.com/golang/groupcache v0.0.0-20191027212112-611e8accdfc9 h1:uHTyIjqVhYRhLbJ8nIiOJHkEZZ+5YoOsAbD3sk82NiE=
 github.com/golang/groupcache v0.0.0-20191027212112-611e8accdfc9/go.mod h1:cIg4eruTrX1D+g88fzRXU5OdNfaM+9IcxsU14FzY7Hc=
 github.com/golang/protobuf v1.3.2 h1:6nsPYzhq5kReh6QImI3k5qWzO4PEbvbIW2cwSfR/6xs=

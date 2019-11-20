@@ -1,15 +1,18 @@
 FROM golang:latest
 
-WORKDIR /app
+WORKDIR /go/src/app
 
-COPY go.mod go.sum ./
+ADD go.mod go.mod
+ADD go.sum go.sum
 
-RUN go mod download
+ADD . .
 
-COPY . .
+RUN go build -mod=vendor -o main .
 
-RUN go build -o main .
+ENV CAS_SERVER_ADDR=localhost:5000
+ENV PEER_PORT=6001
+ENV LISTEN_PORT=16001
 
-EXPOSE 18000-19000
+EXPOSE 16001
 
 CMD ["./main"]

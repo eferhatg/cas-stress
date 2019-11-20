@@ -1,0 +1,20 @@
+# github.com/eferhatg/cas-stress/cashttpclient v0.0.0-20191120154842-95772e4a6c38 => /Users/eferhatg/Projects/golang/src/github.com/eferhatg/cas-stress/cashttpclient
+github.com/eferhatg/cas-stress/cashttpclient
+# github.com/eferhatg/cas-stress/casutils v0.0.0-20191120154842-95772e4a6c38 => /Users/eferhatg/Projects/golang/src/github.com/eferhatg/cas-stress/casutils
+github.com/eferhatg/cas-stress/casutils
+# github.com/golang/groupcache v0.0.0-20191027212112-611e8accdfc9
+github.com/golang/groupcache
+github.com/golang/groupcache/consistenthash
+github.com/golang/groupcache/groupcachepb
+github.com/golang/groupcache/lru
+github.com/golang/groupcache/singleflight
+# github.com/golang/protobuf v1.3.2
+github.com/golang/protobuf/proto
+# github.com/julienschmidt/httprouter v1.3.0
+github.com/julienschmidt/httprouter
+# github.com/konsorten/go-windows-terminal-sequences v1.0.1
+github.com/konsorten/go-windows-terminal-sequences
+# github.com/sirupsen/logrus v1.4.2
+github.com/sirupsen/logrus
+# golang.org/x/sys v0.0.0-20190422165155-953cdadca894
+golang.org/x/sys/unix

@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cas-server-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cas-server
+  template:
+    metadata:
+      labels:
+        app: cas-server
+    spec:
+      containers:
+        - name: cas-server
+          image: eferhatg/cas-server
+          ports:
+            - name: server-endpoint
+              containerPort: 5000
+            - name: server-metrics
+              containerPort: 5555
+          env:
+            - name: CAS_SERVER_PORT
+              value: "5000"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: cas-server-service
+  labels:
+    app: cas-server
+spec:
+  type: ClusterIP
+  selector:
+    app: cas-server
+  ports:
+    - name: server-endpoint
+      port: 5000
+      targetPort: 5000
+      protocol: TCP
+    - name: server-metrics
+      port: 5555
+      protocol: TCP
+      targetPort: 5555

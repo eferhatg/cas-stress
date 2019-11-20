@@ -1,14 +1,13 @@
 FROM golang:latest
 
-WORKDIR /app
+WORKDIR /go/src/app
 
-COPY go.mod go.sum ./
+ADD go.mod go.mod
+ADD go.sum go.sum
 
-RUN go mod download
+ADD . .
 
-COPY . .
-
-RUN go build -o main .
+RUN go build -mod=vendor -o main .
 
 ENV CAS_SERVER_PORT 5000
 

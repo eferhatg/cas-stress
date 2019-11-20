@@ -10,12 +10,18 @@ build:
         dockerfile: Dockerfile
       sync:
         "server/*": .
-    - image: eferhatg/cache-server
+    - image: eferhatg/cas-cache
       context: cacheserver
       docker:
         dockerfile: Dockerfile
       sync:
         "cacheserver/*": .
+    - image: eferhatg/cas-client
+      context: client
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        "client/*": .
 
 deploy:
   kubectl:
@@ -23,3 +29,5 @@ deploy:
       - k8s/server-deployment.yml
       - k8s/cache-deployment.yml
       - k8s/ingress-service.yml
+      - k8s/service-monitor.yml
+      - k8s/client-deployment.yml

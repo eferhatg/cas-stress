@@ -1,0 +1,9 @@
+# github.com/eferhatg/cas-stress v0.0.0-20191120154842-95772e4a6c38
+github.com/eferhatg/cas-stress/cashttpclient
+github.com/eferhatg/cas-stress/casutils
+# github.com/konsorten/go-windows-terminal-sequences v1.0.1
+github.com/konsorten/go-windows-terminal-sequences
+# github.com/sirupsen/logrus v1.4.2
+github.com/sirupsen/logrus
+# golang.org/x/sys v0.0.0-20190422165155-953cdadca894
+golang.org/x/sys/unix

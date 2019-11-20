@@ -13,3 +13,7 @@ spec:
             backend:
               serviceName: cas-server-service
               servicePort: 5000
+          - path: /cache/?(.*)
+            backend:
+              serviceName: cas-cache-service
+              servicePort: 18001

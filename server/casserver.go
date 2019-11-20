@@ -46,7 +46,7 @@ func (cs *CasServer) BuildRouter() *httprouter.Router {
 //GetContent gets the content
 func (cs *CasServer) GetContent(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
 
-	data, err := ioutil.ReadFile(fmt.Sprintf("%s/%s", cs.casFolder, ps.ByName(cs.casParam)))
+	data, err := ioutil.ReadFile(fmt.Sprintf("./%s/%s", cs.casFolder, ps.ByName(cs.casParam)))
 
 	if err == nil {
 		_, err := w.Write(data)
@@ -55,6 +55,7 @@ func (cs *CasServer) GetContent(w http.ResponseWriter, r *http.Request, ps httpr
 		}
 
 	} else {
+		log.Error(err)
 		w.WriteHeader(http.StatusNotFound)
 
 		_, err := w.Write([]byte(http.StatusText(http.StatusNotFound)))

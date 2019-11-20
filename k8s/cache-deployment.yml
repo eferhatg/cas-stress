@@ -1,0 +1,49 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cas-cache-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cas-cache
+  template:
+    metadata:
+      labels:
+        app: cas-cache
+    spec:
+      containers:
+        - name: cas-cache
+          image: eferhatg/cas-cache
+          ports:
+            - name: cache-endpoint
+              containerPort: 8001
+            - name: cache-metrics
+              containerPort: 8555
+          env:
+            - name: CAS_SERVER_ADDR
+              value: "cas-server-service:5000"
+            - name: PEER_PORT
+              value: "8001"
+            - name: LISTEN_PORT
+              value: "18001"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: cas-cache-service
+  labels:
+    app: cas-cache
+spec:
+  type: ClusterIP
+  selector:
+    app: cas-cache
+  ports:
+    - name: cache-endpoint
+      port: 18001
+      targetPort: 18001
+      protocol: TCP
+    - name: cache-metrics
+      port: 18555
+      protocol: TCP
+      targetPort: 18555

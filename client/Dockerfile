@@ -1,9 +1,12 @@
 FROM golang:latest
 
-WORKDIR /app
+WORKDIR /go/src/app
 
-COPY . .
+ADD go.mod go.mod
+ADD go.sum go.sum
 
-RUN go build -o main .
+ADD . .
+
+RUN go build -mod=vendor -o main .
 
 CMD ["./main"]

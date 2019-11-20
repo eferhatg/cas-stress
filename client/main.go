@@ -10,6 +10,7 @@ import (
 func main() {
 	ccli := NewCasClient()
 
+	_ = os.Mkdir(ccli.tempDir, os.ModeDir)
 	EmptyTempFolder(ccli.tempDir)
 
 	ccli.GenerateFile()

@@ -1,9 +1,27 @@
 # github.com/eferhatg/cas-stress v0.0.0-20191120154842-95772e4a6c38
 github.com/eferhatg/cas-stress/cashttpclient
 github.com/eferhatg/cas-stress/casutils
+# github.com/influxdata/tdigest v0.0.1
+github.com/influxdata/tdigest
 # github.com/konsorten/go-windows-terminal-sequences v1.0.1
 github.com/konsorten/go-windows-terminal-sequences
+# github.com/mailru/easyjson v0.7.0
+github.com/mailru/easyjson/jlexer
+github.com/mailru/easyjson/jwriter
+github.com/mailru/easyjson/buffer
 # github.com/sirupsen/logrus v1.4.2
 github.com/sirupsen/logrus
+# github.com/tsenart/vegeta v12.3.0+incompatible
+github.com/tsenart/vegeta/lib
+# golang.org/x/net v0.0.0-20191119073136-fc4aabc6c914
+golang.org/x/net/http2
+golang.org/x/net/http/httpguts
+golang.org/x/net/http2/hpack
+golang.org/x/net/idna
 # golang.org/x/sys v0.0.0-20190422165155-953cdadca894
 golang.org/x/sys/unix
+# golang.org/x/text v0.3.0
+golang.org/x/text/secure/bidirule
+golang.org/x/text/unicode/bidi
+golang.org/x/text/unicode/norm
+golang.org/x/text/transform

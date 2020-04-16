@@ -1,4 +1,8 @@
-# CONTENT ADDRESSABLE STORAGE TEST HARNESS
+# Content Addressable Storage Test Harness 
+
+What is this?
+=========
+This is a simple production-ready [content addressable storage](https://en.wikipedia.org/wiki/Content-addressable_storage) written with Golang. The main idea is effectively caching & load testing & load balancing & monitoring and orchestrating a production ready CAS system.
 
 Architecture
 =========
